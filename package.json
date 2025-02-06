@@ -1,9 +1,8 @@
 {
   "name": "developer-portfolio",
-  "description": "Portfolio of A&apos;zamjon Abdumuxtorov",
+  "description": "Portfolio of A'zamjon Abdumuxtorov",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AzerCoder.github.io/My-portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
