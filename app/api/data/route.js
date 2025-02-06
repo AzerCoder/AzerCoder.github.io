@@ -9,3 +9,5 @@ export async function GET(request) {
     }
   }, { status: 200 });
 };
+
+export const dynamic = 'force-static'
