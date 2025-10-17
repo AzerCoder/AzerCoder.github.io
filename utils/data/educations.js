@@ -2,7 +2,7 @@ export const educations = [
   {
     id: 1,
     title: "Bachelor Degree",
-    duration: "2022 - 2026",
+    duration: "2022.09 - 2026.06",
     institution: "Tashkent University of Information Technologies named after Muhammad al-Khwarizmi",
   },
   {
