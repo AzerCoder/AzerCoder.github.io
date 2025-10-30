@@ -8,13 +8,13 @@ export const educations = [
   {
     id: 2,
     title: "iOS Development",
-    duration: "2024.09 - 2025.01",
+    duration: "2023.09 - 2024.01",
     institution: "PDP Academy",
   },
   {
     id: 3,
     title: "iOS Development",
-    duration: "2024.07 - 2024.10",
+    duration: "2023.07 - 2023.10",
     institution: "Mohirdev",
   },
 ]
