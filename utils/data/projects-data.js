@@ -21,7 +21,7 @@ export const projectsData = [
         demo: '',
         image: '/iqro_quran.PNG',
         image2: '/iqro_quran2.PNG',
-        link: '',
+        link: 'https://apps.apple.com/uz/app/iqroquran/id6742233800',
 
     },
     {
