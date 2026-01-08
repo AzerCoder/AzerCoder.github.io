@@ -1,13 +1,12 @@
 "use client";
 // @flow strict
-import { isValidEmail } from "@/utils/check-email";
 import axios from "axios";
 import { useState } from "react";
 import { TbMailForward } from "react-icons/tb";
 import { toast } from "react-toastify";
 
 function ContactForm() {
-  const [error, setError] = useState({ email: false, required: false });
+  const [error, setError] = useState({ required: false });
   const [isLoading, setIsLoading] = useState(false);
   const [userInput, setUserInput] = useState({
     name: "",
@@ -25,18 +24,16 @@ function ContactForm() {
     e.preventDefault();
 
     if (!userInput.email || !userInput.message || !userInput.name) {
-      setError({ ...error, required: true });
-      return;
-    } else if (error.email) {
+      setError({ required: true });
       return;
     } else {
-      setError({ ...error, required: false });
+      setError({ required: false });
     };
 
     try {
       setIsLoading(true);
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_APP_URL}/api/contact`,
+        `/api/contact`,
         userInput
       );
 
@@ -73,20 +70,16 @@ function ContactForm() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-base">Your Email: </label>
+            <label className="text-base">Your Number or Telegram: </label>
             <input
               className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
-              type="email"
+              type="text"
               maxLength="100"
               required={true}
               value={userInput.email}
               onChange={(e) => setUserInput({ ...userInput, email: e.target.value })}
-              onBlur={() => {
-                checkRequired();
-                setError({ ...error, email: !isValidEmail(userInput.email) });
-              }}
+              onBlur={checkRequired}
             />
-            {error.email && <p className="text-sm text-red-400">Please provide a valid email!</p>}
           </div>
 
           <div className="flex flex-col gap-2">
