@@ -42,6 +42,16 @@ function Certificate() {
             </div>
         </div>
       </div>
+       <div className="py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          <div className="flex flex-col ">
+          <img src="/coursera.jpg" alt="Hero" />
+          </div>
+            <div className="flex flex-col ">
+            <img src="/udemy.jpg" alt="Hero" />
+            </div>
+        </div>
+      </div>
     </div>
   );
 };
