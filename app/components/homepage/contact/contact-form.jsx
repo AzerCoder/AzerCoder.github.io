@@ -1,6 +1,6 @@
 "use client";
 // @flow strict
-import axios from "axios";
+import { sendTelegramMessage } from "@/utils/sendTelegram";
 import { useState } from "react";
 import { TbMailForward } from "react-icons/tb";
 import { toast } from "react-toastify";
@@ -32,19 +32,23 @@ function ContactForm() {
 
     try {
       setIsLoading(true);
-      const res = await axios.post(
-        `/api/contact`,
-        userInput
-      );
+      
+      // Telegram'ga xabar yuborish
+      const success = await sendTelegramMessage(userInput);
 
-      toast.success("Message sent successfully!");
-      setUserInput({
-        name: "",
-        email: "",
-        message: "",
-      });
+      if (success) {
+        toast.success("Message sent successfully!");
+        setUserInput({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
     } catch (error) {
-      toast.error(error?.response?.data?.message);
+      console.error("Error:", error);
+      toast.error("Failed to send message. Please try again.");
     } finally {
       setIsLoading(false);
     };
