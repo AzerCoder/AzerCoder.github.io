@@ -36,10 +36,10 @@ function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      className={`sticky top-0 z-[999] w-full transition-all duration-300 ${
         isScrolled
-          ? "bg-[#0d1224]/90 backdrop-blur-md border-b border-[#1b2c68a0] shadow-lg shadow-black/20"
-          : "bg-[#0d1224]/50 backdrop-blur-sm border-b border-transparent"
+          ? "bg-[#0d1224]/95 backdrop-blur-md border-b border-[#1b2c68a0] shadow-lg shadow-black/40"
+          : "bg-[#0d1224]/80 backdrop-blur-md border-b border-[#1b2c68a0]/30"
       }`}
     >
       <div className="mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]">
