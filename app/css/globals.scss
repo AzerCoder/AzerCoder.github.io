@@ -12,15 +12,20 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background-color: #0d1224;
 }
 
 .sticky-card {
-  top: calc(4.5rem + (var(--index, 1) - 1) * 0.75rem);
+  top: calc(5.5rem + (var(--index, 1) - 1) * 0.75rem);
 
   @media (min-width: 1024px) {
-    top: calc(5.5rem + (var(--index, 1) - 1) * 1.25rem);
+    top: calc(6.5rem + (var(--index, 1) - 1) * 1.25rem);
   }
 }
