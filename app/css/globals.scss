@@ -14,7 +14,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 4rem;
 }
 
 body {
@@ -23,9 +23,9 @@ body {
 }
 
 .sticky-card {
-  top: calc(5.5rem + (var(--index, 1) - 1) * 0.75rem);
+  top: calc(4.5rem + (var(--index, 1) - 1) * 0.75rem);
 
   @media (min-width: 1024px) {
-    top: calc(6.5rem + (var(--index, 1) - 1) * 1.25rem);
+    top: calc(5.25rem + (var(--index, 1) - 1) * 1.25rem);
   }
 }
