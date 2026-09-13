@@ -1,5 +1,17 @@
 export const projectsData = [
     {
+        id: 10,
+        name: 'PingTop',
+        description: "PingTop is an all-in-one social networking and real-time communication application built with Flutter and Dart. It features fast real-time messaging, HD voice and video calling, interactive live streaming, and media sharing with a smooth, responsive UI.",
+        tools: ['Flutter', 'Dart', 'BLoC', 'Dio', 'WebRTC', 'Socket.IO', 'RESTful APIs'],
+        role: 'Mobile Engineer',
+        code: '',
+        demo: '',
+        image: '/pingtop.png',
+        image2: '',
+        link: 'https://apps.apple.com/uz/app/pingtop/id6470659417',
+    },
+    {
         id: 11,
         name: 'UzWorks',
         description: "UzWorks is a mobile application designed to connect workers and employers. Employers can post job vacancies, while workers can create announcements showcasing their skills and experience. The platform supports multiple languages, including Uzbek, Russian, and English, making job searching and hiring more efficient. The app is available on iOS devices.",

@@ -1,4 +1,12 @@
 export const skillsData = [
+  'Flutter',
+  'Dart',
+  'BLoC',
+  'Provider',
+  'GetX',
+  'Dio',
+  'Hive',
+  'Clean Architecture',
   'Swift',
   'SwiftUI',
   'UIKit (XIB)',
@@ -24,6 +32,8 @@ export const skillsData = [
   'MVP',
   'VIPER',
   'Xcode',
+  'Android Studio',
   'CI/CD',
-  'App Store'
+  'App Store',
+  'Google Play'
 ];
