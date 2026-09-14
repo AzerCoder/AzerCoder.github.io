@@ -1,6 +1,5 @@
 // @flow strict
 
-import Image from 'next/image';
 import * as React from 'react';
 
 function ProjectCard({ project }) {
@@ -17,14 +16,22 @@ function ProjectCard({ project }) {
           <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-orange-400"></div>
           <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-green-200"></div>
         </div>
-        <p className="text-center ml-3 text-[#16f2b3] text-base lg:text-xl">
+        <h3 className="text-center ml-3 text-[#16f2b3] text-base lg:text-xl">
           {project.name}
-        </p>
+        </h3>
       </div>
 
       <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8 flex flex-row gap-6 items-center">
         <a href={project.link} target="_blank" rel="noopener noreferrer" className='w-1/3 flex items-center justify-center block overflow-hidden'>
-          <img src={project.image} className="w-[80%] h-full max-h-[480px] !rounded-md block" />
+          <img
+            src={project.image}
+            alt={`${project.name} — ${project.tools.slice(0, 3).join(', ')} mobile app screenshot by A'zamjon Abdumuxtorov`}
+            width={project.imageWidth}
+            height={project.imageHeight}
+            loading="lazy"
+            decoding="async"
+            className="w-[80%] h-full max-h-[480px] !rounded-md block"
+          />
         </a>
 
         <code className="w-2/3 font-mono text-xs md:text-sm lg:text-base flex flex-col gap-2">

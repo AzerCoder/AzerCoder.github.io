@@ -17,7 +17,12 @@ function Navbar() {
   const scrollToSection = (e, id) => {
     e.preventDefault();
     const element = document.getElementById(id);
-    if (element) {
+    if (!element) {
+      // Bo'lim bu sahifada yo'q (masalan /uz) — bosh sahifadagi bo'limga o'tamiz
+      window.location.href = `/#${id}`;
+      return;
+    }
+    {
       const navHeight = 60;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navHeight;

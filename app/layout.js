@@ -7,50 +7,62 @@ import ScrollToTop from "./components/helper/scroll-to-top";
 import Navbar from "./components/navbar";
 import "./css/card.scss";
 import "./css/globals.scss";
-const inter = Inter({ subsets: ["latin"] });
+import { projectsData } from "@/utils/data/projects-data";
+import { skillsData } from "@/utils/data/skills";
+
+const inter = Inter({ subsets: ["latin"], display: "swap" });
+
+const SITE_URL = "https://iosdev.uz";
 
 export const metadata = {
-  metadataBase: new URL('https://iosdev.uz'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "A'zamjon Abdumuxtorov | Mobile Engineer Portfolio",
+    default: "A'zamjon Abdumuxtorov | Mobile Engineer — iOS & Flutter Developer",
     template: "%s | A'zamjon Abdumuxtorov",
   },
   description:
-    "Portfolio of A'zamjon Abdumuxtorov (AzerCoder) - Professional Mobile Engineer based in Tashkent, Uzbekistan. Specializing in Swift, SwiftUI, Flutter, and high-performance mobile applications.",
-  keywords: [
-    "A'zamjon Abdumuxtorov",
-    "Azamjon Abdumuxtorov",
-    "AzerCoder",
-    "iOS Developer",
-    "iOS Developer Uzbekistan",
-    "iOS Developer Tashkent",
-    "iOS dasturchi",
-    "iOS dasturchi O'zbekiston",
-    "Swift",
-    "SwiftUI",
-    "Flutter Developer",
-    "Flutter Uzbekistan",
-    "Mobile Developer Uzbekistan",
-    "iosdev.uz"
-  ],
-  authors: [{ name: "A'zamjon Abdumuxtorov", url: "https://iosdev.uz" }],
+    "A'zamjon Abdumuxtorov (AzerCoder) — Mobile Engineer in Tashkent, Uzbekistan. Building iOS apps with Swift, SwiftUI & UIKit and cross-platform apps with Flutter. Shipped apps: PingTop, UzWorks, Iqro Qur'an.",
+  applicationName: "iosdev.uz",
+  authors: [{ name: "A'zamjon Abdumuxtorov", url: SITE_URL }],
   creator: "A'zamjon Abdumuxtorov",
+  publisher: "A'zamjon Abdumuxtorov",
+  category: "technology",
   alternates: {
-    canonical: "https://iosdev.uz",
+    canonical: "/",
+    languages: {
+      "en-US": "/",
+      "uz-UZ": "/uz",
+      "x-default": "/",
+    },
   },
   openGraph: {
-    type: "website",
+    type: "profile",
+    firstName: "A'zamjon",
+    lastName: "Abdumuxtorov",
+    username: "AzerCoder",
     locale: "en_US",
-    url: "https://iosdev.uz",
-    siteName: "A'zamjon Abdumuxtorov - iOS Developer",
-    title: "A'zamjon Abdumuxtorov | iOS & Flutter Developer Portfolio",
+    alternateLocale: ["uz_UZ"],
+    url: SITE_URL,
+    siteName: "A'zamjon Abdumuxtorov — Mobile Engineer",
+    title: "A'zamjon Abdumuxtorov | Mobile Engineer — iOS & Flutter Developer",
     description:
-      "Explore projects, skills, and experience of A'zamjon Abdumuxtorov - Professional iOS & Mobile Developer.",
+      "Portfolio of A'zamjon Abdumuxtorov — iOS & Flutter Mobile Engineer based in Tashkent, Uzbekistan. Swift, SwiftUI, UIKit, Flutter, Dart.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "A'zamjon Abdumuxtorov — Mobile Engineer, iOS & Flutter Developer, Tashkent",
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "A'zamjon Abdumuxtorov | iOS & Flutter Developer",
-    description: "Professional iOS & Flutter Developer based in Tashkent, Uzbekistan.",
+    card: "summary_large_image",
+    title: "A'zamjon Abdumuxtorov | Mobile Engineer — iOS & Flutter",
+    description:
+      "iOS & Flutter Mobile Engineer based in Tashkent, Uzbekistan. Swift, SwiftUI, UIKit, Flutter, Dart.",
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -63,44 +75,97 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
+  // Google Search Console tasdiqlash kodini shu yerga qo'ying:
+  // verification: { google: "XXXXXXXXXXXXXXXXXXXX" },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
+export const viewport = {
+  themeColor: "#0d1224",
+  width: "device-width",
+  initialScale: 1,
+};
+
+const person = {
   "@type": "Person",
-  "name": "A'zamjon Abdumuxtorov",
-  "alternateName": ["Azamjon Abdumuxtorov", "AzerCoder"],
-  "url": "https://iosdev.uz",
-  "jobTitle": "Mobile Engineer",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "ALIFCO LLC"
+  "@id": `${SITE_URL}/#person`,
+  name: "A'zamjon Abdumuxtorov",
+  alternateName: ["Azamjon Abdumuxtorov", "AzerCoder", "Азамжон Абдумухторов"],
+  url: SITE_URL,
+  image: `${SITE_URL}/profile.jpg`,
+  jobTitle: "Mobile Engineer",
+  description:
+    "iOS and Flutter Mobile Engineer based in Tashkent, Uzbekistan, specialising in Swift, SwiftUI, UIKit and Flutter.",
+  email: "mailto:azamjonabdumuxtorov1220@gmail.com",
+  nationality: { "@type": "Country", name: "Uzbekistan" },
+  worksFor: { "@type": "Organization", name: "ALIFCO LLC" },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Tashkent University of Information Technologies named after Muhammad al-Khwarizmi",
   },
-  "address": {
+  address: {
     "@type": "PostalAddress",
-    "addressLocality": "Tashkent",
-    "addressCountry": "Uzbekistan"
+    addressLocality: "Tashkent",
+    addressRegion: "Tashkent",
+    addressCountry: "UZ",
   },
-  "sameAs": [
+  sameAs: [
     "https://github.com/AzerCoder",
     "https://www.linkedin.com/in/azamjonabdumuxtorov/",
     "https://t.me/Azamjon_Abdumuxtorov",
     "https://instagram.com/azamjon_abdumuxtorov",
-    "https://www.facebook.com/profile.php?id=100087191440460"
+    "https://www.facebook.com/profile.php?id=100087191440460",
   ],
-  "knowsAbout": [
-    "iOS Development",
-    "Swift",
-    "SwiftUI",
-    "UIKit",
-    "Flutter",
-    "Dart",
-    "Mobile App Development",
-    "REST APIs"
-  ]
+  knowsLanguage: ["uz", "en", "ru"],
+  knowsAbout: skillsData,
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    person,
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "A'zamjon Abdumuxtorov — Mobile Engineer",
+      inLanguage: "en",
+      publisher: { "@id": `${SITE_URL}/#person` },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${SITE_URL}/#webpage`,
+      url: SITE_URL,
+      name: "A'zamjon Abdumuxtorov | Mobile Engineer — iOS & Flutter Developer",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#person` },
+      primaryImageOfPage: `${SITE_URL}/og-image.jpg`,
+      inLanguage: "en",
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${SITE_URL}/#projects`,
+      name: "Mobile applications built by A'zamjon Abdumuxtorov",
+      itemListElement: projectsData.map((project, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
+          "@type": "SoftwareApplication",
+          name: project.name,
+          description: project.description,
+          applicationCategory: "MobileApplication",
+          operatingSystem: "iOS",
+          image: `${SITE_URL}${project.image}`,
+          ...(project.link ? { url: project.link } : {}),
+          author: { "@id": `${SITE_URL}/#person` },
+        },
+      })),
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM;
+
   return (
     <html lang="en">
       <head>
@@ -115,10 +180,16 @@ export default function RootLayout({ children }) {
                 if ('scrollRestoration' in history) {
                   history.scrollRestoration = 'manual';
                 }
-                if (window.location.hash) {
+                // Faqat sahifa QAYTA YUKLANGANDA hash tozalanadi.
+                // Boshqa sahifadan kelgan anchor havolalar (/#projects) ishlashda davom etadi.
+                var nav = performance.getEntriesByType('navigation')[0];
+                var isReload = nav ? nav.type === 'reload' : false;
+                if (isReload && window.location.hash) {
                   history.replaceState(null, '', window.location.pathname);
+                  window.scrollTo(0, 0);
+                } else if (!window.location.hash) {
+                  window.scrollTo(0, 0);
                 }
-                window.scrollTo(0, 0);
               } catch (e) {}
             `,
           }}
@@ -133,7 +204,7 @@ export default function RootLayout({ children }) {
         </main>
         <Footer />
       </body>
-      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
+      {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
     </html>
   );
 }

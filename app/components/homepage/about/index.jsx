@@ -6,18 +6,19 @@ import Image from "next/image";
 
 function AboutSection() {
   return (
-    <div id="about" className="my-12 lg:my-16 relative">
+    <section id="about" className="my-12 lg:my-16 relative">
+      <h2 className="sr-only">About A&apos;zamjon Abdumuxtorov — iOS &amp; Flutter Mobile Engineer</h2>
       <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
+        <span aria-hidden="true" className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
           ABOUT ME
         </span>
         <span className="h-36 w-[2px] bg-[#1a1443]"></span>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
         <div className="order-2 lg:order-1">
-          <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
+          <h3 className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
             Who I am?
-          </p>
+          </h3>
           <p className="text-gray-200 text-sm lg:text-lg">
             {personalData.description}
           </p>
@@ -27,12 +28,13 @@ function AboutSection() {
             src={personalData.profile}
             width={280}
             height={280}
-            alt={personalData.name}
-            className="rounded-lg transition-all duration-300  hover:grayscale-0 hover:scale-105 cursor-pointer"
+            alt={`${personalData.name} — Mobile Engineer (iOS & Flutter) in Tashkent, Uzbekistan`}
+            loading="lazy"
+            className="rounded-lg object-cover transition-all duration-300  hover:grayscale-0 hover:scale-105 cursor-pointer"
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -11,9 +11,10 @@ import { FaTelegram, FaInstagram } from "react-icons/fa"
 
 function ContactSection() {
   return (
-    <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
+    <section id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
+      <h2 className="sr-only">Contact A&apos;zamjon Abdumuxtorov</h2>
       <div className="hidden lg:flex flex-col items-center absolute top-24 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
+        <span aria-hidden="true" className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
           CONTACT
         </span>
         <span className="h-36 w-[2px] bg-[#1a1443]"></span>
@@ -82,7 +83,7 @@ function ContactSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -11,10 +11,12 @@ import { FaTelegram, FaInstagram } from "react-icons/fa"
 
 function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
+    <section id="home" className="relative flex flex-col items-center justify-between py-4 lg:py-12">
       <Image
         src="/hero.svg"
-        alt="Hero"
+        alt=""
+        aria-hidden="true"
+        priority
         width={1572}
         height={795}
         className="absolute -top-[98px] -z-10"
@@ -30,6 +32,15 @@ function HeroSection() {
             <span className=" text-[#16f2b3]">{personalData.designation}</span>
             .
           </h1>
+
+          <p className="mt-6 text-base text-gray-300 lg:text-lg">
+            iOS &amp; Flutter developer based in Tashkent, Uzbekistan. I build native
+            iOS apps with <strong className="font-medium text-white">Swift</strong>,{' '}
+            <strong className="font-medium text-white">SwiftUI</strong> and{' '}
+            <strong className="font-medium text-white">UIKit</strong>, and cross-platform
+            apps with <strong className="font-medium text-white">Flutter</strong> and{' '}
+            <strong className="font-medium text-white">Dart</strong> — shipped to the App Store.
+          </p>
 
           <div className="my-12 flex items-center gap-5">
             <Link

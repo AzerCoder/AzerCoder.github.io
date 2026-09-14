@@ -15,8 +15,15 @@ function Footer() {
           <p className="text-sm">
             © Developer Portfolio by <Link target="_blank" href={personalData.telegram} className="text-[#16f2b3]">  A&apos;zamjon Abdumuxtorov</Link>
           </p>
-          <div className="flex items-center gap-5">
-          </div>
+          <nav aria-label="Til tanlash" className="flex items-center gap-3 text-sm">
+            <Link href="/" hrefLang="en" className="text-gray-300 transition-colors hover:text-[#16f2b3]">
+              English
+            </Link>
+            <span className="text-[#353951]">|</span>
+            <Link href="/uz" hrefLang="uz" className="text-gray-300 transition-colors hover:text-[#16f2b3]">
+              O&apos;zbekcha
+            </Link>
+          </nav>
         </div>
       </div>
     </div >
