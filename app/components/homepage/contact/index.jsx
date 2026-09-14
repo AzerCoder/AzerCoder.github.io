@@ -9,18 +9,18 @@ import { MdAlternateEmail } from "react-icons/md";
 import ContactForm from './contact-form';
 import { FaTelegram, FaInstagram } from "react-icons/fa"
 
-function ContactSection() {
+function ContactSection({ t }) {
   return (
     <section id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
-      <h2 className="sr-only">Contact A&apos;zamjon Abdumuxtorov</h2>
+      <h2 className="sr-only">{t.contact.heading}</h2>
       <div className="hidden lg:flex flex-col items-center absolute top-24 -right-8">
         <span aria-hidden="true" className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
-          CONTACT
+          {t.contact.label}
         </span>
         <span className="h-36 w-[2px] bg-[#1a1443]"></span>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-        <ContactForm />
+        <ContactForm t={t} />
         <div className="lg:w-3/4 ">
           <div className="flex flex-col gap-5 lg:gap-9">
             <p className="text-sm md:text-xl flex items-center gap-3">

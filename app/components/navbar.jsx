@@ -2,9 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { TbWorld } from "react-icons/tb";
+import { useLocale } from "./helper/use-locale";
 
 function Navbar() {
+  const { locale, t } = useLocale();
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const homeHref = locale === "uz" ? "/uz" : "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,8 +23,7 @@ function Navbar() {
     e.preventDefault();
     const element = document.getElementById(id);
     if (!element) {
-      // Bo'lim bu sahifada yo'q (masalan /uz) — bosh sahifadagi bo'limga o'tamiz
-      window.location.href = `/#${id}`;
+      window.location.href = `${homeHref}#${id}`;
       return;
     }
     {
@@ -39,6 +43,15 @@ function Navbar() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const links = [
+    { id: "about", label: t.nav.about },
+    { id: "experience", label: t.nav.experience },
+    { id: "skills", label: t.nav.skills },
+    { id: "education", label: t.nav.education },
+    { id: "certificate", label: t.nav.certificate },
+    { id: "projects", label: t.nav.projects },
+  ];
+
   return (
     <header
       className={`sticky top-0 z-[999] w-full transition-all duration-300 ${
@@ -51,69 +64,41 @@ function Navbar() {
         <nav className="flex items-center justify-between py-2.5 sm:py-3">
           <div className="flex flex-shrink-0 items-center">
             <Link
-              href="/"
+              href={homeHref}
               onClick={scrollToTop}
               className="text-[#16f2b3] text-xl sm:text-2xl font-bold tracking-tight transition-all duration-300 hover:opacity-90">
               A&apos;zamjon Abdumuxtorov
             </Link>
           </div>
 
-          <ul className="mt-2 flex h-screen max-h-0 w-full flex-col items-start text-xs sm:text-sm opacity-0 md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 md:opacity-100" id="navbar-default">
-            <li>
-              <a
-                href="#about"
-                onClick={(e) => scrollToSection(e, "about")}
-                className="block px-3 py-1.5 no-underline outline-none hover:no-underline cursor-pointer"
-              >
-                <div className="text-xs sm:text-sm font-medium text-white transition-colors duration-300 hover:text-pink-600">ABOUT</div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#experience"
-                onClick={(e) => scrollToSection(e, "experience")}
-                className="block px-3 py-1.5 no-underline outline-none hover:no-underline cursor-pointer"
-              >
-                <div className="text-xs sm:text-sm font-medium text-white transition-colors duration-300 hover:text-pink-600">EXPERIENCE</div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#skills"
-                onClick={(e) => scrollToSection(e, "skills")}
-                className="block px-3 py-1.5 no-underline outline-none hover:no-underline cursor-pointer"
-              >
-                <div className="text-xs sm:text-sm font-medium text-white transition-colors duration-300 hover:text-pink-600">SKILLS</div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#education"
-                onClick={(e) => scrollToSection(e, "education")}
-                className="block px-3 py-1.5 no-underline outline-none hover:no-underline cursor-pointer"
-              >
-                <div className="text-xs sm:text-sm font-medium text-white transition-colors duration-300 hover:text-pink-600">EDUCATION</div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#certificate"
-                onClick={(e) => scrollToSection(e, "certificate")}
-                className="block px-3 py-1.5 no-underline outline-none hover:no-underline cursor-pointer"
-              >
-                <div className="text-xs sm:text-sm font-medium text-white transition-colors duration-300 hover:text-pink-600">CERTIFICATE</div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                onClick={(e) => scrollToSection(e, "projects")}
-                className="block px-3 py-1.5 no-underline outline-none hover:no-underline cursor-pointer"
-              >
-                <div className="text-xs sm:text-sm font-medium text-white transition-colors duration-300 hover:text-pink-600">PROJECTS</div>
-              </a>
-            </li>
-          </ul>
+          <div className="flex items-center gap-2 md:gap-3">
+            <ul className="mt-2 flex h-screen max-h-0 w-0 overflow-hidden flex-col items-start text-xs sm:text-sm opacity-0 md:mt-0 md:h-auto md:max-h-screen md:w-auto md:overflow-visible md:flex-row md:space-x-1 md:border-0 md:opacity-100" id="navbar-default">
+              {links.map((link) => (
+                <li key={link.id}>
+                  <a
+                    href={`#${link.id}`}
+                    onClick={(e) => scrollToSection(e, link.id)}
+                    className="block px-3 py-1.5 no-underline outline-none hover:no-underline cursor-pointer"
+                  >
+                    <div className="text-xs sm:text-sm font-medium text-white transition-colors duration-300 hover:text-pink-600">
+                      {link.label}
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <Link
+              href={t.switchTo.href}
+              hrefLang={t.switchTo.hrefLang}
+              aria-label={`${t.nav.language}: ${t.switchTo.label}`}
+              title={t.switchTo.label}
+              className="flex flex-shrink-0 items-center gap-1.5 rounded-full border border-[#1b2c68a0] bg-[#11152c] px-3 py-1.5 text-xs font-semibold tracking-wider text-white transition-colors duration-300 hover:border-violet-500 hover:text-[#16f2b3]"
+            >
+              <TbWorld size={15} />
+              {t.switchTo.code}
+            </Link>
+          </div>
         </nav>
       </div>
     </header>

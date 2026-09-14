@@ -6,7 +6,7 @@ import { BsPersonWorkspace } from "react-icons/bs";
 import AnimationLottie from "../../helper/animation-lottie";
 import GlowCard from "../../helper/glow-card";
 
-function Experience() {
+function Experience({ t }) {
   return (
     <section id="experience" className="relative z-10 border-t my-12 lg:my-24 border-[#25213b]">
       <Image
@@ -22,7 +22,7 @@ function Experience() {
         <div className="flex  items-center">
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
           <h2 className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Experiences
+            {t.experience.title}
           </h2>
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
@@ -52,7 +52,7 @@ function Experience() {
                       />
                       <div className="flex justify-center">
                         <p className="text-xs sm:text-sm text-[#16f2b3]">
-                          {experience.duration}
+                          {t.locale === 'uz' ? experience.durationUz : experience.duration}
                         </p>
                       </div>
                       <div className="flex items-center gap-x-8 px-3 py-5">
@@ -61,7 +61,7 @@ function Experience() {
                         </div>
                         <div>
                           <h3 className="text-base sm:text-xl mb-2 font-medium uppercase">
-                            {experience.title}
+                            {t.locale === 'uz' ? experience.titleUz : experience.title}
                           </h3>
                           <p className="text-sm sm:text-base">
                             {experience.company}

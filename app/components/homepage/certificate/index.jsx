@@ -2,37 +2,13 @@
 import Image from "next/image";
 
 const certificates = [
-  {
-    src: "/pdp.webp",
-    width: 1000,
-    height: 708,
-    alt: "iOS Development certificate from PDP Academy awarded to A'zamjon Abdumuxtorov",
-    issuer: "PDP Academy",
-  },
-  {
-    src: "/mohirdev.webp",
-    width: 1000,
-    height: 707,
-    alt: "iOS Development certificate from Mohirdev awarded to A'zamjon Abdumuxtorov",
-    issuer: "Mohirdev",
-  },
-  {
-    src: "/coursera.webp",
-    width: 1000,
-    height: 773,
-    alt: "Coursera course completion certificate awarded to A'zamjon Abdumuxtorov",
-    issuer: "Coursera",
-  },
-  {
-    src: "/udemy.webp",
-    width: 1000,
-    height: 744,
-    alt: "Udemy course completion certificate awarded to A'zamjon Abdumuxtorov",
-    issuer: "Udemy",
-  },
+  { key: "pdp", src: "/pdp.webp", width: 1000, height: 708, issuer: "PDP Academy" },
+  { key: "mohirdev", src: "/mohirdev.webp", width: 1000, height: 707, issuer: "Mohirdev" },
+  { key: "coursera", src: "/coursera.webp", width: 1000, height: 773, issuer: "Coursera" },
+  { key: "udemy", src: "/udemy.webp", width: 1000, height: 744, issuer: "Udemy" },
 ];
 
-function Certificate() {
+function Certificate({ t }) {
   return (
     <section id="certificate" className="relative z-10 border-t my-12 lg:my-24 border-[#25213b]">
       <Image
@@ -53,7 +29,7 @@ function Certificate() {
         <div className="flex  items-center">
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
           <h2 className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Certificate
+            {t.certificate.title}
           </h2>
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
@@ -65,7 +41,7 @@ function Certificate() {
             <figure key={certificate.src} className="flex flex-col">
               <img
                 src={certificate.src}
-                alt={certificate.alt}
+                alt={t.certificate.alt[certificate.key]}
                 width={certificate.width}
                 height={certificate.height}
                 loading="lazy"

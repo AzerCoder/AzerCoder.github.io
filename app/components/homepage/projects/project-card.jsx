@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, t }) {
   return (
     <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full h-[600px]">
       <div className="flex flex-row">
@@ -25,7 +25,9 @@ function ProjectCard({ project }) {
         <a href={project.link} target="_blank" rel="noopener noreferrer" className='w-1/3 flex items-center justify-center block overflow-hidden'>
           <img
             src={project.image}
-            alt={`${project.name} — ${project.tools.slice(0, 3).join(', ')} mobile app screenshot by A'zamjon Abdumuxtorov`}
+            alt={t.projects.imageAlt
+              .replace("{name}", project.name)
+              .replace("{tools}", project.tools.slice(0, 3).join(", "))}
             width={project.imageWidth}
             height={project.imageHeight}
             loading="lazy"
@@ -63,14 +65,14 @@ function ProjectCard({ project }) {
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">myRole:</span>
             <span className="text-orange-400">{"\""}</span>
-            <span className="text-orange-400">{project.role}</span>
+            <span className="text-orange-400">{t.locale === 'uz' ? project.roleUz : project.role}</span>
             <span className="text-orange-400">{"\""}</span>
             <span className="text-gray-400">,</span>
           </div>
           <div className="ml-4 lg:ml-8 mr-2">
             <span className="text-white">description:</span>
             <span className="text-cyan-400">{" \""}</span>
-            <span className="text-cyan-400">{project.description}</span>
+            <span className="text-cyan-400">{t.locale === 'uz' ? project.descriptionUz : project.description}</span>
             <span className="text-cyan-400">{"\""}</span>
           </div>
           <div><span className="text-gray-400">{")"}</span></div>

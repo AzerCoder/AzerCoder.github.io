@@ -5,7 +5,7 @@ import { BsPersonWorkspace } from "react-icons/bs";
 import AnimationLottie from "../../helper/animation-lottie";
 import GlowCard from "../../helper/glow-card";
 
-function Education() {
+function Education({ t }) {
   return (
     <section id="education" className="relative z-10 border-t my-12 lg:my-24 border-[#25213b]">
       <Image
@@ -26,7 +26,7 @@ function Education() {
         <div className="flex  items-center">
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
           <h2 className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Educations
+            {t.education.title}
           </h2>
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
@@ -65,9 +65,9 @@ function Education() {
                         </div>
                         <div>
                           <h3 className="text-base sm:text-xl mb-2 font-medium uppercase">
-                            {education.title}
+                            {t.locale === 'uz' ? education.titleUz : education.title}
                           </h3>
-                          <p className="text-sm sm:text-base">{education.institution}</p>
+                          <p className="text-sm sm:text-base">{t.locale === 'uz' ? education.institutionUz : education.institution}</p>
                         </div>
                       </div>
                     </div>
