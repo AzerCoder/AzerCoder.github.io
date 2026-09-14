@@ -2,12 +2,13 @@
 
 import { skillsData } from "@/utils/data/skills";
 import Marquee from "react-fast-marquee";
+import SectionGlow from "../../helper/section-glow";
 import SkillIcon from "./skill-icon";
 
 function Skills({ t }) {
   return (
     <section id="skills" className="relative z-10 border-t my-12 lg:my-24 border-[#25213b]">
-      <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>
+      <SectionGlow size={360} opacity={0.2} className="left-1/2 top-[78px] -translate-x-1/2 -translate-y-1/2" />
 
       <div className="flex justify-center -translate-y-[1px]">
         <div className="w-3/4">

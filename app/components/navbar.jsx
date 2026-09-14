@@ -62,11 +62,11 @@ function Navbar() {
     >
       <div className="mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]">
         <nav className="flex items-center justify-between py-2.5 sm:py-3">
-          <div className="flex flex-shrink-0 items-center">
+          <div className="flex min-w-0 items-center">
             <Link
               href={homeHref}
               onClick={scrollToTop}
-              className="text-[#16f2b3] text-xl sm:text-2xl font-bold tracking-tight transition-all duration-300 hover:opacity-90">
+              className="truncate text-[#16f2b3] text-lg sm:text-xl md:text-2xl font-bold tracking-tight transition-all duration-300 hover:opacity-90">
               A&apos;zamjon Abdumuxtorov
             </Link>
           </div>

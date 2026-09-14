@@ -12,7 +12,6 @@ export const projectsData = [
         image: '/pingtop.webp',
         imageWidth: 600,
         imageHeight: 1298,
-        image2: '',
         link: 'https://apps.apple.com/uz/app/pingtop/id6470659417',
     },
     {
@@ -28,7 +27,6 @@ export const projectsData = [
         image: '/uzworks.webp',
         imageWidth: 600,
         imageHeight: 1299,
-        image2: '/uzworks2.webp',
         link: 'https://apps.apple.com/uz/app/uzworks/id6612023430',
     },
     {
@@ -44,7 +42,6 @@ export const projectsData = [
         image: '/iqro_quran.webp',
         imageWidth: 600,
         imageHeight: 1299,
-        image2: '/iqro_quran2.webp',
         link: 'https://apps.apple.com/uz/app/iqroquran/id6742233800',
 
     },
@@ -61,7 +58,6 @@ export const projectsData = [
         image: '/quronplayer.webp',
         imageWidth: 591,
         imageHeight: 1280,
-        image2: '/',
         link: '',
     },
     {
@@ -77,7 +73,6 @@ export const projectsData = [
         image: '/foodapp.webp',
         imageWidth: 590,
         imageHeight: 1280,
-        image2: '',
         link: '',
     },
     {
@@ -93,7 +88,6 @@ export const projectsData = [
         image: '/tuitttj.webp',
         imageWidth: 590,
         imageHeight: 1280,
-        image2: '',
         link: ''
     },
     {
@@ -109,7 +103,6 @@ export const projectsData = [
         image: '/bigtaxi.webp',
         imageWidth: 591,
         imageHeight: 1280,
-        image2: '',
         link: '',
     }
 ];

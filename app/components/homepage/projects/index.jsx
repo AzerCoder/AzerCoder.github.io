@@ -1,4 +1,5 @@
 import { projectsData } from '@/utils/data/projects-data';
+import SectionGlow from '../../helper/section-glow';
 import ProjectCard from './project-card';
 
 const Projects = ({ t }) => {
@@ -6,7 +7,7 @@ const Projects = ({ t }) => {
   return (
     <section id='projects' className="relative z-10 my-12 lg:my-24">
       <div className="sticky top-16 z-20">
-        <div className="w-[80px] h-[80px] bg-violet-100 rounded-full absolute -top-3 left-0 translate-x-1/2 filter blur-3xl  opacity-30"></div>
+        <SectionGlow size={300} opacity={0.22} className="left-[90px] top-[14px] -translate-x-1/2 -translate-y-1/2" />
         <div className="flex items-center justify-start relative">
           <h2 className="bg-[#1a1443] absolute left-0  w-fit text-white px-5 py-3 text-xl rounded-md">
             {t.projects.title}
