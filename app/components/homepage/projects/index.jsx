@@ -9,8 +9,8 @@ const Projects = ({ t }) => {
       <div className="sticky top-16 z-20">
         <SectionGlow size={300} opacity={0.22} className="left-[90px] top-[14px] -translate-x-1/2 -translate-y-1/2" />
         <div className="flex items-center justify-start relative">
-          <h2 className="bg-[#1a1443] absolute left-0  w-fit text-white px-5 py-3 text-xl rounded-md">
-            {t.projects.title}
+          <h2 className="bg-[#1a1443] absolute left-0 w-fit text-white px-4 py-2.5 text-base rounded-md sm:px-5 sm:py-3 sm:text-xl">
+            {t.projects.heading}
           </h2>
           <span className="w-full h-[2px] bg-[#1a1443]"></span>
         </div>

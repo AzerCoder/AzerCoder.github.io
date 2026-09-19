@@ -5,10 +5,10 @@ const SITE_URL = "https://iosdev.uz";
 
 export const metadata = {
   title: {
-    absolute: "A'zamjon Abdumuxtorov — iOS va Flutter dasturchi (Toshkent)",
+    absolute: "A'zamjon Abdumuxtorov — Mobile Engineer (mobil dasturchi)",
   },
   description:
-    "A'zamjon Abdumuxtorov — Toshkentlik iOS va Flutter dasturchi. Swift, SwiftUI, UIKit, Flutter va Dart texnologiyalarida mobil ilovalar ishlab chiqaman. App Store'ga chiqarilgan loyihalar: PingTop, UzWorks, Iqro Qur'on.",
+    "A'zamjon Abdumuxtorov — 3+ yillik tajribaga ega toshkentlik Mobile Engineer. Swift, SwiftUI va Flutter yordamida ishlab chiqarishga tayyor mobil ilovalar yarataman. App Store'ga chiqarilgan loyihalar: PingTop, UzWorks, Iqro Qur'on.",
   alternates: {
     canonical: "/uz",
     languages: {
@@ -22,9 +22,9 @@ export const metadata = {
     locale: "uz_UZ",
     alternateLocale: ["en_US"],
     url: `${SITE_URL}/uz`,
-    title: "A'zamjon Abdumuxtorov — iOS va Flutter dasturchi (Toshkent)",
+    title: "A'zamjon Abdumuxtorov — Mobile Engineer (mobil dasturchi)",
     description:
-      "Toshkentlik mobil dasturchi. Swift, SwiftUI, UIKit, Flutter, Dart. App Store'ga chiqarilgan ilovalar.",
+      "3+ yillik tajribaga ega toshkentlik Mobile Engineer. Swift, SwiftUI, Flutter, Dart. App Store'ga chiqarilgan ilovalar.",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
 };
@@ -34,13 +34,13 @@ const jsonLdUz = {
   "@type": "ProfilePage",
   url: `${SITE_URL}/uz`,
   inLanguage: "uz",
-  name: "A'zamjon Abdumuxtorov — iOS va Flutter dasturchi",
+  name: "A'zamjon Abdumuxtorov — Mobile Engineer",
   about: { "@id": `${SITE_URL}/#person` },
   mainEntity: {
     "@type": "Person",
     "@id": `${SITE_URL}/#person`,
     name: "A'zamjon Abdumuxtorov",
-    jobTitle: "Mobil dasturchi",
+    jobTitle: "Mobile Engineer",
     url: SITE_URL,
     address: {
       "@type": "PostalAddress",

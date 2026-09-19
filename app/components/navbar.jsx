@@ -46,6 +46,7 @@ function Navbar() {
   const links = [
     { id: "about", label: t.nav.about },
     { id: "experience", label: t.nav.experience },
+    { id: "mobile", label: t.nav.mobile },
     { id: "skills", label: t.nav.skills },
     { id: "education", label: t.nav.education },
     { id: "certificate", label: t.nav.certificate },
@@ -66,8 +67,9 @@ function Navbar() {
             <Link
               href={homeHref}
               onClick={scrollToTop}
-              className="truncate text-[#16f2b3] text-lg sm:text-xl md:text-2xl font-bold tracking-tight transition-all duration-300 hover:opacity-90">
-              A&apos;zamjon Abdumuxtorov
+              className="truncate text-[#16f2b3] text-lg sm:text-xl lg:text-2xl font-bold tracking-tight transition-all duration-300 hover:opacity-90">
+              <span className="md:hidden lg:inline">A&apos;zamjon Abdumuxtorov</span>
+              <span className="hidden md:inline lg:hidden">A&apos;zamjon A.</span>
             </Link>
           </div>
 
@@ -78,7 +80,7 @@ function Navbar() {
                   <a
                     href={`#${link.id}`}
                     onClick={(e) => scrollToSection(e, link.id)}
-                    className="block px-3 py-1.5 no-underline outline-none hover:no-underline cursor-pointer"
+                    className="block px-2 py-1.5 no-underline outline-none hover:no-underline cursor-pointer lg:px-3"
                   >
                     <div className="text-xs sm:text-sm font-medium text-white transition-colors duration-300 hover:text-pink-600">
                       {link.label}

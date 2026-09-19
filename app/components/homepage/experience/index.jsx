@@ -28,6 +28,10 @@ function Experience({ t }) {
         </div>
       </div>
 
+      <p className="mx-auto max-w-2xl text-center text-sm text-gray-400 lg:text-base">
+        {t.experience.identity}
+      </p>
+
       <div className="py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex justify-center items-start">

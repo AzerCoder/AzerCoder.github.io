@@ -16,6 +16,9 @@ import {
   SiReactivex,
   SiGithubactions,
   SiHive,
+  SiWebrtc,
+  SiSocketdotio,
+  SiAndroid,
 } from 'react-icons/si';
 import {
   FaFolderOpen,
@@ -26,6 +29,8 @@ import {
   FaImage,
   FaMapMarkedAlt,
   FaBolt,
+  FaLocationArrow,
+  FaCreditCard,
 } from 'react-icons/fa';
 import {
   TbDeviceMobile,
@@ -41,6 +46,12 @@ import {
   TbApi,
   TbTestPipe,
   TbCode,
+  TbPlugConnected,
+  TbTopologyStar3,
+  TbArrowsLeftRight,
+  TbDeviceTabletCode,
+  TbDeviceTablet,
+  TbDatabase,
 } from 'react-icons/tb';
 import { MdAnimation } from 'react-icons/md';
 
@@ -74,7 +85,39 @@ function SkillIcon({ skill, size = 44 }) {
     case 'ios app':
       return <SiApple size={size} className="text-[#F1F5F9] group-hover:text-white transition-colors duration-300" />;
     case 'coredata':
-      return <SiSqlite size={size} className="text-[#0284C7] group-hover:text-[#38BDF8] transition-colors duration-300" />;
+    case 'core data':
+      return <FaDatabase size={size} className="text-[#0284C7] group-hover:text-[#38BDF8] transition-colors duration-300" />;
+    case 'swiftdata':
+      return <TbDatabase size={size} className="text-[#0071E3] group-hover:text-[#38BDF8] transition-colors duration-300" />;
+    case 'sqlite':
+      return <SiSqlite size={size} className="text-[#0F80CC] group-hover:text-[#38BDF8] transition-colors duration-300" />;
+    case 'concurrency':
+      return <TbArrowsLeftRight size={size} className="text-[#F05138] group-hover:text-[#FB923C] transition-colors duration-300" />;
+    case 'avfoundation':
+      return <FaMusic size={size} className="text-[#A855F7] group-hover:text-[#C084FC] transition-colors duration-300" />;
+    case 'corelocation':
+      return <FaLocationArrow size={size} className="text-[#34D399] group-hover:text-[#6EE7B7] transition-colors duration-300" />;
+    case 'storekit':
+      return <FaCreditCard size={size} className="text-[#38BDF8] group-hover:text-[#7DD3FC] transition-colors duration-300" />;
+    case 'webrtc':
+      return <SiWebrtc size={size} className="text-[#F97316] group-hover:text-[#FDBA74] transition-colors duration-300" />;
+    case 'socket.io':
+      return <SiSocketdotio size={size} className="text-[#E2E8F0] group-hover:text-white transition-colors duration-300" />;
+    case 'websocket':
+      return <TbPlugConnected size={size} className="text-[#22D3EE] group-hover:text-[#67E8F9] transition-colors duration-300" />;
+    case 'mvi':
+      return <TbTopologyStar3 size={size} className="text-[#F472B6] group-hover:text-[#F9A8D4] transition-colors duration-300" />;
+    case 'ios':
+      return <SiApple size={size} className="text-[#F1F5F9] group-hover:text-white transition-colors duration-300" />;
+    case 'android':
+      return <SiAndroid size={size} className="text-[#3DDC84] group-hover:text-[#6EE7B7] transition-colors duration-300" />;
+    case 'mobile':
+    case 'mobile architecture':
+      return <TbDeviceTabletCode size={size} className="text-[#A78BFA] group-hover:text-[#C4B5FD] transition-colors duration-300" />;
+    case 'responsive ui':
+      return <TbDeviceTablet size={size} className="text-[#38BDF8] group-hover:text-[#7DD3FC] transition-colors duration-300" />;
+    case 'platform integrations':
+      return <TbPlugConnected size={size} className="text-[#F59E0B] group-hover:text-[#FBBF24] transition-colors duration-300" />;
     case 'userdefaults':
       return <FaDatabase size={size} className="text-[#94A3B8] group-hover:text-[#CBD5E1] transition-colors duration-300" />;
     case 'filemanager':
@@ -98,6 +141,7 @@ function SkillIcon({ skill, size = 44 }) {
     case 'keychain':
       return <FaKey size={size} className="text-[#EAB308] group-hover:text-[#FDE047] transition-colors duration-300" />;
     case 'rest api':
+    case 'restful apis':
       return <TbApi size={size} className="text-[#14B8A6] group-hover:text-[#2DD4BF] transition-colors duration-300" />;
     case 'github':
       return <SiGithub size={size} className="text-[#F8FAFC] group-hover:text-white transition-colors duration-300" />;

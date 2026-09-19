@@ -17,11 +17,11 @@ const SITE_URL = "https://iosdev.uz";
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "A'zamjon Abdumuxtorov | Mobile Engineer — iOS & Flutter Developer",
+    default: "A'zamjon Abdumuxtorov — Mobile Engineer",
     template: "%s | A'zamjon Abdumuxtorov",
   },
   description:
-    "A'zamjon Abdumuxtorov (AzerCoder) — Mobile Engineer in Tashkent, Uzbekistan. Building iOS apps with Swift, SwiftUI & UIKit and cross-platform apps with Flutter. Shipped apps: PingTop, UzWorks, Iqro Qur'an.",
+    "A'zamjon Abdumuxtorov is a Mobile Engineer building production applications with Swift, SwiftUI and Flutter. 3+ years of experience, based in Tashkent, Uzbekistan. Shipped apps: PingTop, UzWorks, Iqro Qur'an.",
   applicationName: "iosdev.uz",
   authors: [{ name: "A'zamjon Abdumuxtorov", url: SITE_URL }],
   creator: "A'zamjon Abdumuxtorov",
@@ -44,24 +44,24 @@ export const metadata = {
     alternateLocale: ["uz_UZ"],
     url: SITE_URL,
     siteName: "A'zamjon Abdumuxtorov — Mobile Engineer",
-    title: "A'zamjon Abdumuxtorov | Mobile Engineer — iOS & Flutter Developer",
+    title: "A'zamjon Abdumuxtorov — Mobile Engineer",
     description:
-      "Portfolio of A'zamjon Abdumuxtorov — iOS & Flutter Mobile Engineer based in Tashkent, Uzbekistan. Swift, SwiftUI, UIKit, Flutter, Dart.",
+      "A'zamjon Abdumuxtorov is a Mobile Engineer with 3+ years of experience building production applications with Swift, SwiftUI and Flutter. Strong iOS foundation, hands-on cross-platform development.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "A'zamjon Abdumuxtorov — Mobile Engineer, iOS & Flutter Developer, Tashkent",
+        alt: "A'zamjon Abdumuxtorov — Mobile Engineer, Tashkent",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "A'zamjon Abdumuxtorov | Mobile Engineer — iOS & Flutter",
+    title: "A'zamjon Abdumuxtorov — Mobile Engineer",
     description:
-      "iOS & Flutter Mobile Engineer based in Tashkent, Uzbekistan. Swift, SwiftUI, UIKit, Flutter, Dart.",
+      "Mobile Engineer with 3+ years of experience building production applications with Swift, SwiftUI and Flutter. Based in Tashkent, Uzbekistan.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -94,7 +94,13 @@ const person = {
   image: `${SITE_URL}/profile.jpg`,
   jobTitle: "Mobile Engineer",
   description:
-    "iOS and Flutter Mobile Engineer based in Tashkent, Uzbekistan, specialising in Swift, SwiftUI, UIKit and Flutter.",
+    "Mobile Engineer with 3+ years of experience, based in Tashkent, Uzbekistan, building production applications with Swift, SwiftUI and Flutter. Strong iOS foundation, hands-on cross-platform development.",
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Mobile Engineer",
+    occupationalCategory: "15-1252.00",
+    skills: "Swift, SwiftUI, UIKit, Flutter, Dart, iOS, Android",
+  },
   email: "mailto:azamjonabdumuxtorov1220@gmail.com",
   nationality: { "@type": "Country", name: "Uzbekistan" },
   worksFor: { "@type": "Organization", name: "ALIFCO LLC" },
@@ -135,7 +141,7 @@ const jsonLd = {
       "@type": "ProfilePage",
       "@id": `${SITE_URL}/#webpage`,
       url: SITE_URL,
-      name: "A'zamjon Abdumuxtorov | Mobile Engineer — iOS & Flutter Developer",
+      name: "A'zamjon Abdumuxtorov — Mobile Engineer",
       isPartOf: { "@id": `${SITE_URL}/#website` },
       about: { "@id": `${SITE_URL}/#person` },
       primaryImageOfPage: `${SITE_URL}/og-image.jpg`,
@@ -144,7 +150,7 @@ const jsonLd = {
     {
       "@type": "ItemList",
       "@id": `${SITE_URL}/#projects`,
-      name: "Mobile applications built by A'zamjon Abdumuxtorov",
+      name: "Selected mobile projects by A'zamjon Abdumuxtorov",
       itemListElement: projectsData.map((project, i) => ({
         "@type": "ListItem",
         position: i + 1,
@@ -153,7 +159,9 @@ const jsonLd = {
           name: project.name,
           description: project.description,
           applicationCategory: "MobileApplication",
-          operatingSystem: "iOS",
+          operatingSystem: project.platforms?.includes("Cross-platform")
+            ? "iOS, Android"
+            : "iOS",
           image: `${SITE_URL}${project.image}`,
           ...(project.link ? { url: project.link } : {}),
           author: { "@id": `${SITE_URL}/#person` },

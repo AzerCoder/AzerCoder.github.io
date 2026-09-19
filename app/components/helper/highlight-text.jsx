@@ -1,7 +1,9 @@
 // @flow strict
 import * as React from "react";
 
-const TERMS = ["Swift", "SwiftUI", "UIKit", "Flutter", "Dart"];
+// Diqqat: uzunroq nomlar oldinda turishi shart, aks holda "SwiftUI"
+// regexp'da "Swift" + "UI" bo'lib ikkiga bo'linib ketadi.
+const TERMS = ["SwiftUI", "Swift", "UIKit", "Flutter", "Dart"];
 
 // Tarjima matnidagi texnologiya nomlarini qalin ko'rsatadi (UI bir xil qoladi)
 function HighlightText({ text }) {

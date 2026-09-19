@@ -1,10 +1,11 @@
 // @flow strict
 
 import * as React from 'react';
+import TechChip from '../../helper/tech-chip';
 
 function ProjectCard({ project, t }) {
   return (
-    <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full h-[600px]">
+    <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full min-h-[600px]">
       <div className="flex flex-row">
         <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
         <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
@@ -19,6 +20,16 @@ function ProjectCard({ project, t }) {
         <h3 className="text-center ml-3 text-[#16f2b3] text-base lg:text-xl">
           {project.name}
         </h3>
+
+        {project.platforms?.length ? (
+          <ul className="absolute right-4 top-1/2 hidden -translate-y-1/2 flex-wrap gap-1.5 sm:flex lg:right-8">
+            {project.platforms.map((platform) => (
+              <li key={platform}>
+                <TechChip label={platform} size="sm" accent />
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </div>
 
       <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8 flex flex-row gap-6 items-center">
@@ -61,6 +72,20 @@ function ProjectCard({ project, t }) {
             ))}
             <span className="text-gray-400">{"\"],"}</span>
           </div>
+
+          {project.platforms?.length ? (
+            <div className="ml-4 lg:ml-8 mr-2">
+              <span className="text-white">platform:</span>
+              <span className="text-gray-400">{" [\""}</span>
+              {project.platforms.map((platform, i) => (
+                <React.Fragment key={i}>
+                  <span className="text-amber-300">{platform}</span>
+                  {project.platforms.length - 1 !== i && <span className="text-gray-400">{"\", \""}</span>}
+                </React.Fragment>
+              ))}
+              <span className="text-gray-400">{"\"],"}</span>
+            </div>
+          ) : null}
 
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">myRole:</span>

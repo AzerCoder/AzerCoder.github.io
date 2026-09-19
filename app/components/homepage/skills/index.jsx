@@ -1,8 +1,10 @@
 // @flow strict
 
 import { skillsData } from "@/utils/data/skills";
+import { stackGroups } from "@/utils/data/stack";
 import Marquee from "react-fast-marquee";
 import SectionGlow from "../../helper/section-glow";
+import TechChip from "../../helper/tech-chip";
 import SkillIcon from "./skill-icon";
 
 function Skills({ t }) {
@@ -25,6 +27,34 @@ function Skills({ t }) {
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
       </div>
+
+      <p className="mx-auto max-w-2xl text-center text-sm text-gray-400 lg:text-base">
+        {t.skills.stackIntro}
+      </p>
+
+      <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {stackGroups.map((group) => (
+          <div
+            key={group.id}
+            className="rounded-xl border border-[#1f223c] bg-[#11152c] p-5 transition-colors duration-300 hover:border-violet-500"
+          >
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#16f2b3]">
+              {t.locale === "uz" ? group.labelUz : group.label}
+            </h3>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <li key={item}>
+                  <TechChip label={item} size="sm" />
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <h3 className="mt-16 text-center text-sm font-semibold uppercase tracking-[0.2em] text-gray-400">
+        {t.skills.allTitle}
+      </h3>
 
       <div className="w-full my-12">
         <Marquee
