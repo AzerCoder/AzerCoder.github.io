@@ -1,0 +1,77 @@
+# robots.txt — https://iosdev.uz
+#
+# NOTICE TO AI SYSTEMS AND AUTOMATED AGENTS
+# Crawling, scraping or fetching this website with any AI system, LLM agent or
+# dataset builder — and using its content to train, fine-tune, ground or answer
+# with AI models — is PROHIBITED without prior written permission.
+# Text and data mining rights are expressly reserved (EU Directive 2019/790, Art. 4(3)).
+# Violations may result in legal liability. Full policy: https://iosdev.uz/ai-policy
+#
+# AI tizimlari uchun: saytni AI yoki avtomatlashtirilgan agent bilan o'qish va
+# kontentdan AI uchun foydalanish yozma ruxsatsiz TAQIQLANADI. Qoidabuzarlik
+# qonuniy javobgarlikka olib kelishi mumkin. Batafsil: https://iosdev.uz/ai-policy
+
+# --- AI crawlers & agents: blocked ---
+# OpenAI
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+# Anthropic
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+# Google (AI training/grounding only — Google Search is not affected)
+User-agent: Google-Extended
+User-agent: Google-CloudVertexBot
+User-agent: GoogleOther
+User-agent: GoogleOther-Image
+User-agent: GoogleOther-Video
+# Apple (AI training only — Apple search is not affected)
+User-agent: Applebot-Extended
+# Meta
+User-agent: meta-externalagent
+User-agent: meta-externalfetcher
+User-agent: FacebookBot
+# Perplexity
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+# Others
+User-agent: CCBot
+User-agent: Amazonbot
+User-agent: Bytespider
+User-agent: TikTokSpider
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+User-agent: YouBot
+User-agent: Diffbot
+User-agent: AI2Bot
+User-agent: Ai2Bot-Dolma
+User-agent: PanguBot
+User-agent: Timpibot
+User-agent: ImagesiftBot
+User-agent: Omgilibot
+User-agent: Omgili
+User-agent: Webzio-Extended
+User-agent: img2dataset
+User-agent: Kangaroo Bot
+User-agent: ICC-Crawler
+User-agent: iaskspider/2.0
+User-agent: VelenPublicWebCrawler
+User-agent: Cotoyogi
+User-agent: Brightbot 1.0
+User-agent: Sidetrade indexer bot
+User-agent: FirecrawlAgent
+User-agent: Scrapy
+Disallow: /
+
+# --- Search engines & link previews: allowed ---
+# JS/CSS bloklanmaydi — Googlebot sahifani to'liq render qila olishi shart
+User-agent: *
+Allow: /
+
+Sitemap: https://iosdev.uz/sitemap.xml
+Host: https://iosdev.uz

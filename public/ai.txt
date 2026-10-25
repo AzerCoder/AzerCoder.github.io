@@ -1,0 +1,10 @@
+# ai.txt — https://iosdev.uz
+# AI usage policy for this website (Spawning ai.txt format).
+#
+# No content on this website (text, images, code, PDF résumé, metadata) may be
+# used to train, fine-tune, evaluate or ground AI models, or be stored in AI
+# datasets, embeddings or retrieval indexes, without prior written permission.
+# Violations may result in legal liability. Full policy: https://iosdev.uz/ai-policy
+
+User-Agent: *
+Disallow: /

@@ -75,6 +75,11 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
+  // AI botlar uchun: TDM huquqi saqlab qolingan (TDMRep) va AI'da foydalanish taqiqlangan — /ai-policy
+  other: {
+    "tdm-reservation": "1",
+    robots: "noai, noimageai",
+  },
   // Google Search Console tasdiqlash kodini shu yerga qo'ying:
   // verification: { google: "XXXXXXXXXXXXXXXXXXXX" },
 };

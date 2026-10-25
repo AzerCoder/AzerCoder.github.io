@@ -90,7 +90,7 @@ const en = {
     success: "Message sent successfully!",
     failure: "Failed to send message. Please try again.",
   },
-  footer: { by: "© Developer Portfolio by" },
+  footer: { by: "© Developer Portfolio by", aiPolicy: "AI Policy" },
 };
 
 const uz = {
@@ -182,7 +182,7 @@ const uz = {
     success: "Xabar muvaffaqiyatli yuborildi!",
     failure: "Xabar yuborilmadi. Iltimos, qayta urinib ko'ring.",
   },
-  footer: { by: "© Portfolio muallifi:" },
+  footer: { by: "© Portfolio muallifi:", aiPolicy: "AI siyosati" },
 };
 
 const dictionaries = { en, uz };

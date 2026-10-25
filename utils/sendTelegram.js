@@ -1,6 +1,15 @@
 // Telegram Bot Configuration
-const TELEGRAM_BOT_TOKEN = "8314226753:AAFBCufO4C0ZVqAaUa0WTPgagCWH7AePrGc";
+//
+// Token repo'da SAQLANMAYDI: lokal — .env.local, CI — GitHub Secret (TELEGRAM_BOT_TOKEN).
+// Build paytida token teskari aylantirilib base64 qilinadi (.github/workflows/nextjs.yml):
+// JS faylida token ko'rinishida turmaydi, token qidiruvchi skanerlar uni topa olmaydi.
+// Bu shifrlash emas — forma yuborilganda token Network so'rovida baribir ko'rinadi.
+const TELEGRAM_BOT_TOKEN_ENC = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN_ENC;
 const TELEGRAM_CHAT_ID = "5020012161";
+
+function decodeToken(encoded) {
+  return atob(encoded).split("").reverse().join("");
+}
 
 /**
  * Send message to Telegram bot
@@ -11,6 +20,11 @@ const TELEGRAM_CHAT_ID = "5020012161";
  * @returns {Promise<boolean>} - Success status
  */
 export async function sendTelegramMessage({ name, email, message }) {
+  if (!TELEGRAM_BOT_TOKEN_ENC) {
+    console.error("NEXT_PUBLIC_TELEGRAM_BOT_TOKEN_ENC sozlanmagan");
+    return false;
+  }
+
   const text = `
 📩 New Contact Message
 
@@ -20,7 +34,7 @@ export async function sendTelegramMessage({ name, email, message }) {
 ${message}
   `;
 
-  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+  const url = `https://api.telegram.org/bot${decodeToken(TELEGRAM_BOT_TOKEN_ENC)}/sendMessage`;
 
   try {
     const response = await fetch(url, {

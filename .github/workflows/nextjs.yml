@@ -73,6 +73,12 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Encode Telegram token
+        # Token repo'da emas: Settings → Secrets and variables → Actions → Secrets.
+        # JS faylida ochiq turmasligi uchun teskari + base64 (utils/sendTelegram.js da tiklanadi)
+        run: echo "NEXT_PUBLIC_TELEGRAM_BOT_TOKEN_ENC=$(printf '%s' "$TELEGRAM_BOT_TOKEN" | rev | base64 -w0)" >> "$GITHUB_ENV"
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact

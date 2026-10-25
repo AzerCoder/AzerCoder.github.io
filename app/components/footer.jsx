@@ -18,6 +18,7 @@ function Footer() {
             {t.footer.by} <Link target="_blank" href={personalData.telegram} className="text-[#16f2b3]">  A&apos;zamjon Abdumuxtorov</Link>
           </p>
           <div className="flex items-center gap-5">
+            <Link href="/ai-policy" className="text-sm text-[#d3d8e8] hover:text-[#16f2b3]">{t.footer.aiPolicy}</Link>
           </div>
         </div>
       </div>
